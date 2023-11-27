@@ -1,0 +1,24 @@
+﻿@page
+@model LoginModel
+@{
+}
+
+<h3>Login form</h3>
+@Model.Message
+<form method="post">
+    <table>
+        <tr>
+            <td>UserName  (Poul eller Charlotte)</td>
+            <td><Input type="text" asp-for="@Model.UserName" /></td>
+        </tr>
+        <tr>
+            <td>Password (123)</td>
+            <td><Input type="password" asp-for="@Model.PassWord" /></td>
+        </tr>
+        <tr>
+            <td>&nbsp</td>
+            <td><Input type="submit" value="Login" /></td>
+        </tr>
+    </table>
+
+</form>
