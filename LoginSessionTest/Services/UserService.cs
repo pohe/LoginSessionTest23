@@ -6,6 +6,11 @@ namespace LoginSessionTest.Services
 {
     public class UserService : IUserService
     {
+        public void AddUser(User newUser)
+        {
+            MockData.UserData.Add(newUser);
+        }
+
         public List<User> GetAllUsers()
         {
             return MockData.UserData;

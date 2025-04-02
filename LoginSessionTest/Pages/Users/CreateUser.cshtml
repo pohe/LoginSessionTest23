@@ -4,3 +4,32 @@
     ViewData["Title"] = "Create new user";
 }
 <h1>Register a new user</h1>
+
+@{
+    ViewData["Title"] = "Opret ny bruger";
+}
+<div>
+    <h2 >Opret ny bruger:</h2>
+    <form method="post" >
+        <div>
+            <label asp-for="@Model.NewUser.Id" class="control-label"></label>
+            <input asp-for="@Model.NewUser.Id" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="@Model.NewUser.UserName" class="control-label"></label>
+            <input asp-for="@Model.NewUser.UserName" class="form-control" />
+        </div>
+        
+        <div class="form-group">
+        <label asp-for="@Model.NewUser.Password" class="control-label"></label>
+        <input asp-for="@Model.NewUser.Password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.NewUser.Email" class="control-label"></label>
+            <input asp-for="@Model.NewUser.Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Tilføj bruger" class="btn btn-outline-success" />
+        </div>
+    </form>
+</div>
