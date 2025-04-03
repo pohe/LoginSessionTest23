@@ -1,0 +1,44 @@
+﻿@page
+@model LoginSessionTest.Pages.Users.GetAllUsersModel
+@{
+}
+<h4>Du er logget in som @Model.UserName</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                UserName
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Users.Count() != 0)
+        {
+            @foreach (var item in Model.Users)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.UserName
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        <p>
+                            <a asp-page="/Users/DeleteUser" asp-route-userId="@item.Id">Delete</a>
+                        </p>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

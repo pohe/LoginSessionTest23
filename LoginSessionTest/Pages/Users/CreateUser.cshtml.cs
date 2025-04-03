@@ -1,5 +1,3 @@
-using LoginSessionTest.Interfaces;
-using LoginSessionTest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
