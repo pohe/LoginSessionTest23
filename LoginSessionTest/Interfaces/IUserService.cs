@@ -4,8 +4,9 @@ namespace LoginSessionTest.Interfaces
 {
     public interface IUserService
     {
-        public List<User> GetAllUsers();
-       
-        public User VerifyUser(string userName, string passWord);
+        void AddUser(User newUser);
+        List<User> GetAllUsers();
+        User GetUserByUserName(string userName);
+        User VerifyUser(string userName, string passWord);
     }
 }
