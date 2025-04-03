@@ -1,0 +1,45 @@
+﻿@page
+@using LoginSessionTest.Models
+@model LoginSessionTest.Pages.Cars.GetAllCarsModel
+@{
+}
+<h4>Du er logget in som @Model.UserName</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                RegNr
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Cars.Count() != 0)
+        {
+            @foreach (Car item in Model.Cars)
+            {
+                <tr>
+                    <td>
+                        @item.Regnr
+                    </td>
+                    <td>
+                        @item.Model
+                    </td>
+
+                    <td>
+                        <p>
+                            <form method="post">
+                                <input type="submit" value="Add driver" asp-page-handler="AddDriver" asp-route-carRegNr="@item.Regnr" />
+                            </form>
+                        </p>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
